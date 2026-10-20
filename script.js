@@ -1,13 +1,7 @@
 const contactReferences = [
-  {
-    label: 'Phone', value: '09639471380',href: 'tel:09639471380', type: 'phone'
-  },
-  {
-    label: 'Gmail', value: 'joanami.mendoza@gmail.com', href: 'mailto:joanami.mendoza@gmail.com',type: 'email'
-  },
-  {
-    label: 'LinkedIn', value: 'joana-may-mendoza-8800bb412',href: 'https://www.linkedin.com/in/joana-may-mendoza-8800bb412', type: 'linkedin'
-  }
+  { label: 'Phone', value: '09639471380',href: 'tel:09639471380', type: 'phone'},
+  { label: 'Gmail', value: 'joanami.mendoza@gmail.com', href: 'mailto:joanami.mendoza@gmail.com',type: 'email'},
+  { label: 'LinkedIn', value: 'joana-may-mendoza-8800bb412',href: 'https://www.linkedin.com/in/joana-may-mendoza-8800bb412', type: 'linkedin'}
 ];
 
 function getContactIconSvg(type) {
@@ -41,15 +35,9 @@ function getContactIconSvg(type) {
 }
 
 const portraitCards = [
-  {
-    id: 'portrait-joana-1', image: 'images/portrait-joana-1.jpg', alt: 'Joana Mendoza portrait one', label: 'Portrait one'
-  },
-  {
-    id: 'portrait-joana-2', image: 'images/portrait-joana-2.jpg', alt: 'Joana Mendoza portrait two', label: 'Portrait two'
-  },
-  {
-    id: 'portrait-joana-3', image: 'images/portrait-joana-3.jpg', alt: 'Joana Mendoza portrait three', label: 'Portrait three'
-  }
+  { id: 'portrait-joana-1', image: 'images/portrait-joana-1.jpg', alt: 'Joana Mendoza portrait one', label: 'Portrait one'},
+  { id: 'portrait-joana-2', image: 'images/portrait-joana-2.jpg', alt: 'Joana Mendoza portrait two', label: 'Portrait two'},
+  { id: 'portrait-joana-3', image: 'images/portrait-joana-3.jpg', alt: 'Joana Mendoza portrait three', label: 'Portrait three'}
 ];
 
 const skillToolsConfig = {
@@ -61,31 +49,19 @@ const skillToolsConfig = {
   'basic-programming': ['HTML', 'CSS', 'JavaScript'],
   'ui-ux': ['Figma', 'Prototyping', 'Wireframes'],
   'troubleshooting': ['Windows', 'Networking', 'Support'],
-  architecture: ['Planning', 'Systems', 'Documentation'],
+  'architecture': ['Planning', 'Systems', 'Documentation'],
   'social-media': ['Content', 'Branding', 'Engagement'],
-  research: ['Search', 'Analysis', 'Summaries'],
-  adaptable: ['Learning', 'Growth', 'Adaptability'],
-  teamwork: ['Collaboration', 'Listening', 'Feedback'],
+  'research': ['Search', 'Analysis', 'Summaries'],
+  'adaptable': ['Learning', 'Growth', 'Adaptability'],
+  'teamwork': ['Collaboration', 'Listening', 'Feedback'],
   'time-management': ['Planning', 'Focus', 'Scheduling'],
   'problem-solving': ['Debugging', 'Logic', 'Solutions']
 };
 
 const credentialLinks = [
-  {
-    label: 'Credly',
-    value: 'Certificates & badges',
-    href: 'https://www.credly.com/users/joanamay-mendoza-it.f2052220'
-  },
-  {
-    label: 'Google Drive',
-    value: 'Portfolio docs',
-    href: 'https://drive.google.com/'
-  },
-  {
-    label: 'LinkedIn',
-    value: 'Professional profile',
-    href: 'https://www.linkedin.com/in/joana-may-mendoza-8800bb412'
-  }
+  { label: 'Credly', value: 'Certificates & badges', href: 'https://www.credly.com/users/joanamay-mendoza-it.f2052220'},
+  { label: 'Google Drive', value: 'Portfolio docs', href: 'https://drive.google.com/'},
+  { label: 'LinkedIn', value: 'Professional profile', href: 'https://www.linkedin.com/in/joana-may-mendoza-8800bb412'}
 ];
 
 function renderContactLinks() {
