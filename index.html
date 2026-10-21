@@ -3,235 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joana Mendoza | Web Portfolio</title>
-    <meta name="description" content="Portfolio website of Joana Mendoza">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Joana Mendoza is an Information Technology student focused on web development, UI/UX, data visualization, and digital operations.">
+    <meta property="og:title" content="Joana Mendoza | Digital Systems, Design & Data">
+    <meta property="og:description" content="Portfolio and profile of Joana Mendoza, an IT student building practical experience in web development, design, and data-driven workflows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mendoza-joana.pages.dev/">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Joana Mendoza | Digital Systems, Design & Data</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#about" class="logo">My Web Portfolio</a>
-            <ul>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Works</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#credentials" class="nav-link">Credentials</a></li>
-                <li><a href="#contact" class="nav-link">Connect</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="#home">Joana Mendoza</a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#work" class="nav-link">Work</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="about" class="hero">
-            <div class="hero-layout">
-                <div class="hero-copy">
-                    <div class="eyebrow">Introduction</div>
-                    <h1>Hello, I'm <span class="joana-name">Joana</span>!</h1>
-                    <h1>Simple. Intentional. <span>Built to perform.</span></h1>
-                    <p>I am a detail oriented and reliable individual driven to develop creativity through my works. I declutter, take what matters, and leave a purpose.</p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="primary-btn">View Projects</a>
-                        <a href="#contact" class="secondary-btn">Get in Touch</a>
-                    </div>
+        <section class="hero container" id="home">
+            <div class="hero-copy">
+                <p class="eyebrow">IT &amp; Digital Operations | Web Development | UI/UX &amp; Data Visualization</p>
+                <h1>Digital Systems, Design &amp; Data.</h1>
+                <p class="lead">I turn ideas, information, and everyday problems into useful digital experiences through design, code, and organized workflows.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#work">Explore My Work</a>
+                    <a class="button button-secondary" href="#contact">Contact Me</a>
                 </div>
+                <div class="profile-links" aria-label="Contact links">
+                    <a href="mailto:joanami.mendoza@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/joana-may-mendoza-8800bb412" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+                <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Currently building practical projects and early-career IT experience.</p>
+            </div>
 
-                <div class="portrait-scene" aria-label="Joana Mendoza portrait collection">
-                    <div class="card-stack" id="portrait-stack" aria-live="polite"></div>
+            <div class="hero-visual" aria-label="Joana Mendoza portrait gallery">
+                <div class="portrait-stack" id="portrait-stack" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="section container" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">About</p>
+                <h2>Organized, curious, and focused on useful digital work.</h2>
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <p>I am Joana Mendoza, an Information Technology student interested in how digital systems, visual thinking, and practical problem-solving come together. My work sits between web development, UI/UX, data organization, and digital operations, where I enjoy turning messy information into clearer, more useful tools.</p>
+                    <p>Through academic projects, freelance support, and self-directed practice, I have developed experience in HTML, CSS, JavaScript, Excel, Google Workspace, MySQL basics, design tools, and workflow documentation. I enjoy building things that are functional, readable, and easy to use.</p>
+                </div>
+                <div class="about-panel">
+                    <h3>What I bring</h3>
+                    <ul>
+                        <li>Web development and front-end prototyping</li>
+                        <li>UI/UX thinking with responsive layouts</li>
+                        <li>Spreadsheet, data, and reporting workflows</li>
+                        <li>Digital operations support and documentation</li>
+                        <li>Design thinking applied to practical systems</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-            <div class="section-split">
-                <div class="section-heading">
-                    <div class="eyebrow">Capabilities</div>
-                    <h2 class="section-title">My Core Ecosystem</h2>
+        <section class="section container" id="skills">
+            <div class="section-heading">
+                <p class="eyebrow">Skills</p>
+                <h2>Technical Ecosystem</h2>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <h3>Product &amp; UI/UX Design</h3>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Wireframing</li>
+                        <li>User flows</li>
+                        <li>Responsive layouts</li>
+                        <li>Prototyping</li>
+                    </ul>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Data &amp; Dashboard Development</h3>
+                    <ul>
+                        <li>Excel</li>
+                        <li>Google Sheets</li>
+                        <li>SQL basics</li>
+                        <li>Data cleaning</li>
+                        <li>Chart interpretation</li>
+                    </ul>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Graphic Design &amp; Content</h3>
+                    <ul>
+                        <li>Canva</li>
+                        <li>Presentation design</li>
+                        <li>Branding concepts</li>
+                        <li>Social media graphics</li>
+                        <li>Content layout</li>
+                    </ul>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Web Development &amp; Programming</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>JSON</li>
+                        <li>GitHub</li>
+                    </ul>
+                </article>
+
+                <article class="skill-card">
+                    <h3>IT &amp; Digital Operations</h3>
+                    <ul>
+                        <li>Basic troubleshooting</li>
+                        <li>Documentation</li>
+                        <li>Spreadsheet workflows</li>
+                        <li>Reporting</li>
+                        <li>Record organization</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="work">
+            <div class="section-heading">
+                <p class="eyebrow">Work</p>
+                <h2>Featured work and project evidence</h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card project-live">
+                    <div class="project-meta">
+                        <span class="status status-live">Completed</span>
+                        <span class="project-type">Portfolio</span>
+                    </div>
+                    <h3>Joana Mendoza Portfolio</h3>
+                    <p>A personal portfolio site built to present my work, technical interests, and contact details clearly to recruiters.</p>
+                    <ul>
+                        <li>Responsive single-page portfolio</li>
+                        <li>Career-focused content structure</li>
+                        <li>HTML, CSS, and JavaScript implementation</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://mendoza-joana.pages.dev/" target="_blank" rel="noopener noreferrer">Live site</a>
+                    </div>
+                </article>
+
+                <article class="project-card project-prototype">
+                    <div class="project-meta">
+                        <span class="status status-prototype">Prototype</span>
+                        <span class="project-type">Academic</span>
+                    </div>
+                    <h3>Canteen Ordering System</h3>
+                    <p>A student project aimed at simplifying food selection and ordering in a canteen environment with a straightforward front-end workflow.</p>
+                    <ul>
+                        <li>Menu browsing</li>
+                        <li>Order flow concept</li>
+                        <li>Basic UI layout and interactions</li>
+                    </ul>
+                    <div class="project-links">
+                        <span>Public demo not yet available</span>
+                    </div>
+                </article>
+
+                <article class="project-card project-prototype">
+                    <div class="project-meta">
+                        <span class="status status-prototype">Prototype</span>
+                        <span class="project-type">Academic</span>
+                    </div>
+                    <h3>POS System Layout</h3>
+                    <p>A prototype for small retail operations, focused on a fast and clear transaction flow for inventory and checkout tasks.</p>
+                    <ul>
+                        <li>Checkout layout mockup</li>
+                        <li>Customer and product flow</li>
+                        <li>UI concept for retail operations</li>
+                    </ul>
+                    <div class="project-links">
+                        <span>Not publicly deployed</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="roadmap-block">
+                <div class="section-subheading">
+                    <p class="eyebrow">Learning roadmap</p>
+                    <h3>Planned and in-progress opportunities</h3>
                 </div>
 
-                <div class="section-divider" aria-hidden="true"></div>
-
-                <div class="section-content">
-                    <div class="skills-container">
-                        <button class="skill-badge" type="button" data-skill="microsoft-office" aria-label="Microsoft Office skills">Microsoft Office</button>
-                        <button class="skill-badge" type="button" data-skill="google-workspace" aria-label="Google Workspace skills">Google Workspace</button>
-                        <button class="skill-badge" type="button" data-skill="data-entry" aria-label="Data entry skills">Data Entry</button>
-                        <button class="skill-badge" type="button" data-skill="data-analysis-visualization" aria-label="Data analysis and visualization">Data Analysis & Visualization</button>
-                        <button class="skill-badge" type="button" data-skill="editing-design" aria-label="Editing and graphic design skills">Basic Editing &amp; Graphic Design</button>
-                        <button class="skill-badge" type="button" data-skill="basic-programming" aria-label="Basic programming skills">Basic Programming</button>
-                        <button class="skill-badge" type="button" data-skill="ui-ux" aria-label="UI and UX skills">Basic UI/UX</button>
-                        <button class="skill-badge" type="button" data-skill="troubleshooting" aria-label="Networking and troubleshooting skills">Basic Networking/Troubleshooting</button>
-                        <button class="skill-badge" type="button" data-skill="architecture" aria-label="Project and system architecture skills">Project/System Architecture</button>
-                        <button class="skill-badge" type="button" data-skill="social-media" aria-label="Social media skills">Social Media Usage</button>
-                        <button class="skill-badge" type="button" data-skill="research" aria-label="Research skills">Research</button>
-                        <button class="skill-badge" type="button" data-skill="adaptable" aria-label="Adaptability skills">Fast learner &amp; Adaptable</button>
-                        <button class="skill-badge" type="button" data-skill="teamwork" aria-label="Teamwork and communication skills">Teamwork &amp; Communication</button>
-                        <button class="skill-badge" type="button" data-skill="time-management" aria-label="Time management skills">Time Management</button>
-                        <button class="skill-badge" type="button" data-skill="problem-solving" aria-label="Problem solving skills">Problem Solving</button>
-                    </div>
+                <div class="roadmap-grid">
+                    <article class="roadmap-card">
+                        <span class="status status-planned">Planned</span>
+                        <h4>ClearSpace</h4>
+                        <p>Household decluttering and inventory application.</p>
+                    </article>
+                    <article class="roadmap-card">
+                        <span class="status status-planned">Planned</span>
+                        <h4>RetailPulse</h4>
+                        <p>Retail sales analytics dashboard using data-driven reporting.</p>
+                    </article>
+                    <article class="roadmap-card">
+                        <span class="status status-planned">Planned</span>
+                        <h4>LearnLens</h4>
+                        <p>Academic performance dashboard using synthetic data.</p>
+                    </article>
+                    <article class="roadmap-card">
+                        <span class="status status-planned">Planned</span>
+                        <h4>PesoWise</h4>
+                        <p>Personal budget planner focused on day-to-day financial tracking.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <div class="section-split project-split">
-                <div class="section-heading">
-                    <div class="eyebrow">Works & Case Studies</div>
-                    <h2 class="section-title">Designed with Precision.</h2>
+        <section class="section container" id="experience">
+            <div class="section-heading">
+                <p class="eyebrow">Experience</p>
+                <h2>Relevant work and learning timeline</h2>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="timeline-date">2026 — Present</div>
+                    <div class="timeline-content">
+                        <h3>Freelance IT &amp; Administrative Assistant</h3>
+                        <p class="timeline-meta">Independent work</p>
+                        <ul>
+                            <li>Provide IT and admin support to local tasks and small digital needs.</li>
+                            <li>Organize spreadsheet-based records and report-ready data.</li>
+                            <li>Assist with basic troubleshooting, documentation, and routine digital support.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-date">Aug — Sep 2025</div>
+                    <div class="timeline-content">
+                        <h3>IT Team Lead Assistant (OJT)</h3>
+                        <p class="timeline-meta">Knowles Training Institute</p>
+                        <ul>
+                            <li>Supported website-related tasks and WordPress maintenance.</li>
+                            <li>Helped prepare daily reporting and monitoring documents.</li>
+                            <li>Contributed to web pages for training and course-related content.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-date">Mar — Jun 2023</div>
+                    <div class="timeline-content">
+                        <h3>Brand &amp; Sales Associate</h3>
+                        <p class="timeline-meta">Roselie Perfume</p>
+                        <ul>
+                            <li>Handled product presentation and customer-facing sales assistance.</li>
+                            <li>Used Canva to create promotional materials and social content.</li>
+                            <li>Managed product photography, order packaging, and inventory organization.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="education">
+            <div class="section-heading">
+                <p class="eyebrow">Education &amp; credentials</p>
+                <h2>Academic and professional learning</h2>
+            </div>
+
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Education</h3>
+                    <ul>
+                        <li><strong>B.S. in Information and Technology</strong><br>Divine Word College of Calapan<br>2023 — Present</li>
+                        <li><strong>TESDA Programming (JAVA) NCIII</strong><br>Divine Word College of Calapan<br>July — August 2025</li>
+                    </ul>
                 </div>
 
-                <div class="section-divider" aria-hidden="true"></div>
-
-                <div class="section-content">
-                    <div class="project-gallery" aria-label="Project portfolio gallery">
-                        <article class="card project-card">
-                            <h3>E-Commerce Website</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="https://autumnjo-store.pages.dev/" class="apple-link" target="_blank" rel="noopener noreferrer">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                        <article class="card project-card">
-                            <h3>Postrip Website</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="https://my-sharetots.pages.dev/" class="apple-link" target="_blank" rel="noopener noreferrer">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                        <article class="card project-card">
-                            <h3>Saving Application</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="#" class="apple-link">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                        <article class="card project-card">
-                            <h3>POS for Small Retail Businesses</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="https://pos-app.pages.dev/" class="apple-link" target="_blank" rel="noopener noreferrer">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                        <article class="card project-card">
-                            <h3>ThirstTrack Mobile App</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="#" class="apple-link">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                        <article class="card project-card">
-                            <h3>Canteen Application</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="#" class="apple-link">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                        <article class="card project-card">
-                            <h3>Figma Designs and Prototype</h3>
-                            <p>An application layout optimization for fast-checkouts. Frontend-only web app.</p>
-                            <a href="#" class="apple-link">See how it works <span aria-hidden="true">➔</span></a>
-                        </article>
-                    </div>
+                <div class="education-card">
+                    <h3>Professional growth</h3>
+                    <ul>
+                        <li>Digital operations and administrative support</li>
+                        <li>Website maintenance and content support</li>
+                        <li>Spreadsheet and reporting workflows</li>
+                        <li>Design and visual communication in Canva</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="experience">
-            <div class="eyebrow timeline-label">Timeline</div>
-            <div class="timeline-columns">
-                <div class="timeline-column experience-column">
-                    <h2 class="section-title experience-title">Experience</h2>
-                    <div class="timeline-group">
-                        <article class="timeline-item">
-                            <div class="time-frame">2026 — Present (Ongoing)</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">FREELANCE IT & ADMINISTRATIVE ASSISTANT</div>
-                                <div class="company">Independent Side Hustle</div>
-                                <div class="description">I provide IT and administrative support within my local community. I assist with encoding data (budgets via spreadsheets). I also offer basic IT troubleshooting whenever technical issues arise.</div>
-                            </div>
-                        </article>
+        <section class="section container" id="gallery">
+            <div class="section-heading">
+                <p class="eyebrow">Creative work</p>
+                <h2>Design concepts and visual communication samples</h2>
+            </div>
 
-                        <article class="timeline-item">
-                            <div class="time-frame">August — September 2025 (240 hours)</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">OJT - IT Team Lead Assistant</div>
-                                <div class="company">Knowles Training Institute</div>
-                                <div class="description">Assisted in key technical and data monitoring functions. I was responsible for WordPress plugins to ensure optimal website performance and security, and creating daily reports. Also assisted Project Alpha Team 1 in developing web pages for training courses in various Knowles domains.</div>
-                            </div>
-                        </article>
-
-                        <article class="timeline-item">
-                            <div class="time-frame">March — June 2023</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">BRAND & SALES ASSOCIATE</div>
-                                <div class="company">Roselie Perfume</div>
-                                <div class="description">I worked as a reseller earning commissions on every product I sold. I used Canva to design social media posts, took and edited product photos, and managed inventory. I also handled physical fulfillment by cutting out custom stickers and packaging customer orders neatly.</div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="timeline-column education-column">
-                    <h2 class="section-title experience-title education-heading">Education</h2>
-                    <div class="timeline-group">
-                        <article class="timeline-item">
-                            <div class="time-frame">2023 — Present</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">BACHELOR OF SCIENCE IN INFORMATION AND TECHNOLOGY</div>
-                                <div class="company">Divine Word College of Calapan</div>
-                            </div>
-                        </article>
-                        <article class="timeline-item">
-                            <div class="time-frame">July — August 2025</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">TESDA - Programming (JAVA) NCIII</div>
-                                <div class="company">Divine Word College of Calapan</div>
-                            </div>
-                        </article>
-                        <article class="timeline-item">
-                            <div class="time-frame">2017 — 2022</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">JUNIOR & SENIOR HIGH SCHOOL</div>
-                                <div class="company">Holy Infant Academy</div>
-                            </div>
-                        </article>
-                        <article class="timeline-item">
-                            <div class="time-frame">2010 — 2016</div>
-                            <div class="timeline-copy">
-                                <div class="job-title">PRIMARY EDUCATION</div>
-                                <div class="company">Parang Elementary School</div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+            <div class="gallery-grid">
+                <article class="gallery-card">
+                    <div class="art art-brand"><span>Brand Identity</span></div>
+                    <h3>Concept Brand Kit</h3>
+                    <p>Sample identity exploration for a fictional product or campaign concept.</p>
+                </article>
+                <article class="gallery-card">
+                    <div class="art art-social"><span>Social Media</span></div>
+                    <h3>Promo Template Series</h3>
+                    <p>Layout ideas for digital promotion and campaign content.</p>
+                </article>
+                <article class="gallery-card">
+                    <div class="art art-presentation"><span>Presentation</span></div>
+                    <h3>Report Layout</h3>
+                    <p>Presentation concepts for clean and readable information delivery.</p>
+                </article>
             </div>
         </section>
 
-        <section id="credentials">
-            <div class="section-split compact-split">
-                <div class="section-heading">
-                    <div class="eyebrow">Validation</div>
-                    <h2 class="section-title">Credentials: My Progressive Growth</h2>
-                </div>
-
-                <div class="section-content">
-                    <div class="card-grid compact-grid">
-                        <article class="card compact-card">
-                            <div class="eyebrow compact-eyebrow">Professional Proof</div>
-                            <div class="credential-list" id="credential-list" aria-live="polite"></div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="section-split compact-split">
-                <div class="section-heading">
-                    <div class="eyebrow">Get In Touch</div>
-                    <h2 class="section-title">Let's Collaborate</h2>
-                </div>
-
-                <div class="section-content">
-                    <div class="contact-panel">
-                        <p>If you have a project in mind or just want to say hello, feel free to reach out. I'm always open to discussing new opportunities, creative ideas, or potential collaborations.</p>
-                        <div class="contact-list" id="contact-list" aria-live="polite"></div>
-                    </div>
+        <section class="section container" id="contact">
+            <div class="contact-panel">
+                <p class="eyebrow">Contact</p>
+                <h2>Let’s build something useful.</h2>
+                <p>I’m open to entry-level opportunities where I can contribute to web development, IT support, digital operations, or design-related work while continuing to grow my technical skills.</p>
+                <div class="contact-list">
+                    <a href="mailto:joanami.mendoza@gmail.com">joanami.mendoza@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/joana-may-mendoza-8800bb412" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="site-footer container">
+        <p>© <span id="year"></span> Joana Mendoza</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
