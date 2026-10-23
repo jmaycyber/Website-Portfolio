@@ -24,8 +24,8 @@
             <nav class="site-nav" id="site-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#work" class="nav-link">Featured Work</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#work" class="nav-link">Featured Work</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#education" class="nav-link">Education &amp; Credentials</a></li>
                     <li><a href="#roadmap" class="nav-link">Learning Roadmap</a></li>
@@ -111,33 +111,13 @@
             </div>
         </section>
 
-        <section class="section container" id="work">
-            <div class="section-heading section-heading--split">
-                <div>
-                    <p class="eyebrow">Featured Work</p>
-                    <h2>Featured Work and Project Evidence</h2>
-                </div>
-                <div class="section-index">02 / work</div>
-            </div>
-
-            <div class="project-gallery" id="project-gallery" aria-label="Featured projects"></div>
-
-            <div class="project-group" aria-labelledby="figma-projects-heading">
-                <div class="group-header">
-                    <p class="eyebrow">UI/UX Design</p>
-                    <h3 id="figma-projects-heading">Interface prototypes</h3>
-                </div>
-                <div class="figma-gallery" id="figma-gallery" aria-label="UI and UX design projects"></div>
-            </div>
-        </section>
-
         <section class="section container" id="skills">
             <div class="section-heading section-heading--split">
                 <div>
                     <p class="eyebrow">Skills</p>
                     <h2>Technical ecosystem</h2>
                 </div>
-                <div class="section-index">03 / skills</div>
+                <div class="section-index">02 / skills</div>
             </div>
 
             <div class="skills-grid">
@@ -195,6 +175,26 @@
                         <li>Record organization</li>
                     </ul>
                 </article>
+            </div>
+        </section>
+
+        <section class="section container" id="work">
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Featured Work</p>
+                    <h2>Featured Work and Project Evidence</h2>
+                </div>
+                <div class="section-index">03 / work</div>
+            </div>
+
+            <div class="project-gallery" id="project-gallery" aria-label="Featured projects. Scroll horizontally to see each project." tabindex="0"></div>
+
+            <div class="project-group" aria-labelledby="figma-projects-heading">
+                <div class="group-header">
+                    <p class="eyebrow">UI/UX Design</p>
+                    <h3 id="figma-projects-heading">UI/UX Design &amp; Interface Prototypes</h3>
+                </div>
+                <div class="figma-gallery" id="figma-gallery" aria-label="UI and UX design projects. Scroll horizontally to see each project." tabindex="0"></div>
             </div>
         </section>
 
@@ -259,50 +259,40 @@
             </div>
 
             <div class="credentials-layout">
-                <div class="credential-card credential-card--wide">
+                <div class="credential-card">
                     <h3>Formal Education</h3>
                     <ul>
                         <li><strong>B.S. in Information and Technology</strong><span>Divine Word College of Calapan</span><em>2023 — Present</em></li>
-                        <li><strong>TESDA Programming (JAVA) NCIII</strong><span>Divine Word College of Calapan</span><em>July — August 2025</em></li>
                     </ul>
                 </div>
 
-                <div class="credential-card">
+                <div class="credential-card training-card">
                     <h3>Certifications &amp; Training</h3>
-                    <ul>
-                        <li>Digital operations and administrative support</li>
-                        <li>Website maintenance and content support</li>
-                        <li>Spreadsheet and reporting workflows</li>
-                        <li>Design and visual communication in Canva</li>
-                    </ul>
-                </div>
-
-                <div class="credential-card credential-card--image">
-                    <h3>Java Programming NC III</h3>
-                    <p class="credential-issuer">TESDA / Divine Word College of Calapan</p>
-                    <div class="cert-visual cert-visual--java" data-image-src="images/java-cert.png" data-image-alt="Java Programming NC III certificate">
-                        <span>java-cert · image to be added</span>
+                    <div class="certificate-entry">
+                        <div class="certificate-details">
+                            <h4>Java Programming NC III</h4>
+                            <p class="credential-issuer">TESDA / Divine Word College of Calapan</p>
+                            <p class="credential-date">July — August 2025</p>
+                        </div>
+                        <div class="cert-visual cert-visual--java" data-image-src="images/java-cert.png" data-image-alt="Java Programming NC III certificate">
+                            <span>java-cert · image to be added</span>
+                        </div>
+                        <span class="certificate-action" data-certificate-action>Certificate image not added</span>
                     </div>
-                </div>
-
-                <div class="credential-card credential-card--image">
-                    <h3>CDSA</h3>
-                    <p class="credential-issuer">Credential placeholder</p>
-                    <div class="cert-visual cert-visual--cdsa" data-image-src="images/cdsa-cert.png" data-image-alt="CDSA certificate">
-                        <span>cdsa-cert · image to be added</span>
+                    <div class="certificate-entry">
+                        <div class="certificate-details">
+                            <h4>CDSA</h4>
+                            <p class="credential-issuer">Credential placeholder</p>
+                        </div>
+                        <div class="cert-visual cert-visual--cdsa" data-image-src="images/cdsa-cert.png" data-image-alt="CDSA certificate">
+                            <span>cdsa-cert · image to be added</span>
+                        </div>
+                        <span class="certificate-action" data-certificate-action>Certificate image not added</span>
                     </div>
-                </div>
-
-                <div class="credential-card credential-card--link">
-                    <h3>E-Certificates &amp; Learning Badges</h3>
-                    <p>A collection of certificates, course completions, and learning badges.</p>
-                    <a class="button button-primary button-block" href="https://drive.google.com/drive/folders/12hdQMdLK6TkX1yKj32U3EDfuX-vJYX86?usp=sharing" target="_blank" rel="noopener noreferrer">View Google Drive Link</a>
-                </div>
-
-                <div class="credential-card credential-card--link credential-card--verified">
-                    <h3>Verified Credly Credentials</h3>
-                    <p>Open my profile to review verified credentials and badges.</p>
-                    <a class="button button-primary button-block" href="https://www.credly.com/users/joanamay-mendoza-it.f2052220" target="_blank" rel="noopener noreferrer">View Verified Credly Credentials</a>
+                    <div class="training-links">
+                        <a class="button button-primary button-block" href="https://drive.google.com/drive/folders/12hdQMdLK6TkX1yKj32U3EDfuX-vJYX86?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificates &amp; Badges</a>
+                        <a class="button button-secondary button-block" href="https://www.credly.com/users/joanamay-mendoza-it.f2052220" target="_blank" rel="noopener noreferrer">View Verified Credly Credentials</a>
+                    </div>
                 </div>
             </div>
         </section>
