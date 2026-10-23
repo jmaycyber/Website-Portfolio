@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,10 +24,11 @@
             <nav class="site-nav" id="site-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#work" class="nav-link">Work</a></li>
+                    <li><a href="#work" class="nav-link">Featured Work</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#education" class="nav-link">Education &amp; Credentials</a></li>
+                    <li><a href="#roadmap" class="nav-link">Learning Roadmap</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -51,15 +52,45 @@
                 <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Currently building practical projects and early-career IT experience.</p>
             </div>
 
-            <div class="hero-visual" aria-label="Joana Mendoza portrait gallery">
-                <div class="portrait-stack" id="portrait-stack" aria-live="polite"></div>
+            <div class="hero-visual" aria-label="Joana Mendoza portfolio visual">
+                <div class="hero-visual-panel">
+                    <div class="workspace-window">
+                        <div class="window-header">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="window-body">
+                            <div class="window-sidebar">
+                                <span class="sidebar-pill sidebar-pill--maroon">UI/UX</span>
+                                <span class="sidebar-pill sidebar-pill--blue">Data</span>
+                            </div>
+                            <div class="window-content">
+                                <div class="mini-panel">
+                                    <p>Portfolio 01</p>
+                                    <strong>Digital systems</strong>
+                                </div>
+                                <div class="mini-metrics">
+                                    <div><span>Web</span><strong>3 projects</strong></div>
+                                    <div><span>Design</span><strong>5 concepts</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portrait-frame">
+                        <img src="images/portrait-joana-1.jpg" alt="Portrait of Joana Mendoza" loading="lazy">
+                    </div>
+                    <div class="info-tag info-tag--blue">Web dev</div>
+                    <div class="info-tag info-tag--maroon">Design</div>
+                </div>
             </div>
         </section>
 
         <section class="section container" id="about">
-            <div class="section-heading">
-                <p class="eyebrow">About</p>
-                <h2>Organized, curious, and focused on useful digital work.</h2>
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>Organized, curious, and focused on useful digital work.</h2>
+                </div>
+                <div class="section-index">01 / about</div>
             </div>
 
             <div class="about-grid">
@@ -80,10 +111,33 @@
             </div>
         </section>
 
+        <section class="section container" id="work">
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Featured Work</p>
+                    <h2>Real project evidence and digital work.</h2>
+                </div>
+                <div class="section-index">02 / work</div>
+            </div>
+
+            <div class="project-gallery" id="project-gallery" aria-label="Featured projects"></div>
+
+            <div class="project-group" aria-labelledby="figma-projects-heading">
+                <div class="group-header">
+                    <p class="eyebrow">UI/UX Design</p>
+                    <h3 id="figma-projects-heading">Interface prototypes</h3>
+                </div>
+                <div class="figma-gallery" id="figma-gallery" aria-label="UI and UX design projects"></div>
+            </div>
+        </section>
+
         <section class="section container" id="skills">
-            <div class="section-heading">
-                <p class="eyebrow">Skills</p>
-                <h2>Technical Ecosystem</h2>
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Skills</p>
+                    <h2>Technical ecosystem</h2>
+                </div>
+                <div class="section-index">03 / skills</div>
             </div>
 
             <div class="skills-grid">
@@ -144,100 +198,13 @@
             </div>
         </section>
 
-        <section class="section container" id="work">
-            <div class="section-heading">
-                <p class="eyebrow">Work</p>
-                <h2>Featured work and project evidence</h2>
-            </div>
-
-            <div class="project-grid">
-                <article class="project-card project-live">
-                    <div class="project-meta">
-                        <span class="status status-live">Completed</span>
-                        <span class="project-type">Portfolio</span>
-                    </div>
-                    <h3>Joana Mendoza Portfolio</h3>
-                    <p>A personal portfolio site built to present my work, technical interests, and contact details clearly to recruiters.</p>
-                    <ul>
-                        <li>Responsive single-page portfolio</li>
-                        <li>Career-focused content structure</li>
-                        <li>HTML, CSS, and JavaScript implementation</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://mendoza-joana.pages.dev/" target="_blank" rel="noopener noreferrer">Live site</a>
-                    </div>
-                </article>
-
-                <article class="project-card project-prototype">
-                    <div class="project-meta">
-                        <span class="status status-prototype">Prototype</span>
-                        <span class="project-type">Academic</span>
-                    </div>
-                    <h3>Canteen Ordering System</h3>
-                    <p>A student project aimed at simplifying food selection and ordering in a canteen environment with a straightforward front-end workflow.</p>
-                    <ul>
-                        <li>Menu browsing</li>
-                        <li>Order flow concept</li>
-                        <li>Basic UI layout and interactions</li>
-                    </ul>
-                    <div class="project-links">
-                        <span>Public demo not yet available</span>
-                    </div>
-                </article>
-
-                <article class="project-card project-prototype">
-                    <div class="project-meta">
-                        <span class="status status-prototype">Prototype</span>
-                        <span class="project-type">Academic</span>
-                    </div>
-                    <h3>POS System Layout</h3>
-                    <p>A prototype for small retail operations, focused on a fast and clear transaction flow for inventory and checkout tasks.</p>
-                    <ul>
-                        <li>Checkout layout mockup</li>
-                        <li>Customer and product flow</li>
-                        <li>UI concept for retail operations</li>
-                    </ul>
-                    <div class="project-links">
-                        <span>Not publicly deployed</span>
-                    </div>
-                </article>
-            </div>
-
-            <div class="roadmap-block">
-                <div class="section-subheading">
-                    <p class="eyebrow">Learning roadmap</p>
-                    <h3>Planned and in-progress opportunities</h3>
-                </div>
-
-                <div class="roadmap-grid">
-                    <article class="roadmap-card">
-                        <span class="status status-planned">Planned</span>
-                        <h4>ClearSpace</h4>
-                        <p>Household decluttering and inventory application.</p>
-                    </article>
-                    <article class="roadmap-card">
-                        <span class="status status-planned">Planned</span>
-                        <h4>RetailPulse</h4>
-                        <p>Retail sales analytics dashboard using data-driven reporting.</p>
-                    </article>
-                    <article class="roadmap-card">
-                        <span class="status status-planned">Planned</span>
-                        <h4>LearnLens</h4>
-                        <p>Academic performance dashboard using synthetic data.</p>
-                    </article>
-                    <article class="roadmap-card">
-                        <span class="status status-planned">Planned</span>
-                        <h4>PesoWise</h4>
-                        <p>Personal budget planner focused on day-to-day financial tracking.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section class="section container" id="experience">
-            <div class="section-heading">
-                <p class="eyebrow">Experience</p>
-                <h2>Relevant work and learning timeline</h2>
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Experience</p>
+                    <h2>Professional and hands-on work</h2>
+                </div>
+                <div class="section-index">04 / experience</div>
             </div>
 
             <div class="timeline">
@@ -283,22 +250,25 @@
         </section>
 
         <section class="section container" id="education">
-            <div class="section-heading">
-                <p class="eyebrow">Education &amp; credentials</p>
-                <h2>Academic and professional learning</h2>
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Education &amp; Credentials</p>
+                    <h2>Academic and professional learning</h2>
+                </div>
+                <div class="section-index">05 / credentials</div>
             </div>
 
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>Education</h3>
+            <div class="credentials-layout">
+                <div class="credential-card credential-card--wide">
+                    <h3>Formal Education</h3>
                     <ul>
-                        <li><strong>B.S. in Information and Technology</strong><br>Divine Word College of Calapan<br>2023 — Present</li>
-                        <li><strong>TESDA Programming (JAVA) NCIII</strong><br>Divine Word College of Calapan<br>July — August 2025</li>
+                        <li><strong>B.S. in Information and Technology</strong><span>Divine Word College of Calapan</span><em>2023 — Present</em></li>
+                        <li><strong>TESDA Programming (JAVA) NCIII</strong><span>Divine Word College of Calapan</span><em>July — August 2025</em></li>
                     </ul>
                 </div>
 
-                <div class="education-card">
-                    <h3>Professional growth</h3>
+                <div class="credential-card">
+                    <h3>Certifications &amp; Training</h3>
                     <ul>
                         <li>Digital operations and administrative support</li>
                         <li>Website maintenance and content support</li>
@@ -306,30 +276,71 @@
                         <li>Design and visual communication in Canva</li>
                     </ul>
                 </div>
+
+                <div class="credential-card credential-card--image">
+                    <h3>Java Programming NC III</h3>
+                    <p class="credential-issuer">TESDA / Divine Word College of Calapan</p>
+                    <div class="cert-visual cert-visual--java" aria-label="Java Programming NC III certificate placeholder">
+                        <img src="images/java-cert.png" alt="Java Programming NC III certificate placeholder" onerror="this.hidden=true; this.parentElement.classList.add('is-empty');">
+                        <span>java-cert</span>
+                    </div>
+                    <p class="credential-status">Certificate image to be added</p>
+                </div>
+
+                <div class="credential-card credential-card--image">
+                    <h3>CDSA</h3>
+                    <p class="credential-issuer">Credential placeholder</p>
+                    <div class="cert-visual cert-visual--cdsa" aria-label="CDSA certificate placeholder">
+                        <img src="images/cdsa-cert.png" alt="CDSA certificate placeholder" onerror="this.hidden=true; this.parentElement.classList.add('is-empty');">
+                        <span>cdsa-cert</span>
+                    </div>
+                    <p class="credential-status">Certificate image to be added</p>
+                </div>
+
+                <div class="credential-card credential-card--link">
+                    <h3>E-Certificates &amp; Learning Badges</h3>
+                    <p>A collection of certificates, course completions, and learning badges.</p>
+                    <a class="button button-secondary button-block" href="#" aria-disabled="true" tabindex="-1">Link coming soon</a>
+                    <p class="placeholder-note">Editable placeholder: [ADD_GOOGLE_DRIVE_CERTIFICATES_LINK]</p>
+                </div>
+
+                <div class="credential-card credential-card--link credential-card--verified">
+                    <h3>Verified Credly Credentials</h3>
+                    <p>Open my profile to review verified credentials and badges.</p>
+                    <a class="button button-primary button-block" href="https://www.credly.com/users/joanamay-mendoza-it.f2052220" target="_blank" rel="noopener noreferrer">View Verified Credly Credentials</a>
+                </div>
             </div>
         </section>
 
-        <section class="section container" id="gallery">
-            <div class="section-heading">
-                <p class="eyebrow">Creative work</p>
-                <h2>Design concepts and visual communication samples</h2>
+        <section class="section container" id="roadmap">
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Learning Roadmap</p>
+                    <h2>Planned and in-progress learning</h2>
+                </div>
+                <div class="section-index">06 / roadmap</div>
             </div>
 
-            <div class="gallery-grid">
-                <article class="gallery-card">
-                    <div class="art art-brand"><span>Brand Identity</span></div>
-                    <h3>Concept Brand Kit</h3>
-                    <p>Sample identity exploration for a fictional product or campaign concept.</p>
+            <div class="roadmap-grid">
+                <article class="roadmap-card">
+                    <span class="status status-planned">Exploring</span>
+                    <h4>Internet of Things (IoT)</h4>
+                    <p>Learning how connected devices and practical systems can support everyday digital workflows.</p>
                 </article>
-                <article class="gallery-card">
-                    <div class="art art-social"><span>Social Media</span></div>
-                    <h3>Promo Template Series</h3>
-                    <p>Layout ideas for digital promotion and campaign content.</p>
+                <article class="roadmap-card">
+                    <span class="status status-planned">In progress</span>
+                    <h4>Full-Stack Development</h4>
+                    <p>Building stronger end-to-end web application skills across front-end and back-end development.</p>
                 </article>
-                <article class="gallery-card">
-                    <div class="art art-presentation"><span>Presentation</span></div>
-                    <h3>Report Layout</h3>
-                    <p>Presentation concepts for clean and readable information delivery.</p>
+                <article class="roadmap-card">
+                    <span class="status status-planned">Planned</span>
+                    <h4>Cybersecurity / DevOps</h4>
+                    <p>Exploring secure systems, deployment practices, and operational reliability for digital projects.</p>
+                </article>
+                <article class="roadmap-card">
+                    <span class="status status-planned">Planned</span>
+                    <h4>Data Science / AI</h4>
+                    <p>Studying how data, analysis, and intelligent systems can support better decision-making and tools.</p>
                 </article>
             </div>
         </section>
