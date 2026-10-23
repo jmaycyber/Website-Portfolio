@@ -1,50 +1,37 @@
 ﻿const featuredProjects = [
   {
     title: 'Local Distribution Portal',
-    type: 'Prototype',
+    type: 'Personal',
     statusClass: 'status-prototype',
     statusText: 'Prototype',
-    description: 'A prototype built to support organized distribution workflows with a practical, user-friendly interface.',
-    bullets: [
-      'Resource request and overview layout',
-      'Structured workflow for local operations',
-      'Clear, task-focused interface design'
-    ],
-    liveUrl: '#',
+    description: 'A centralized distribution management portal designed to help government officials maintain accurate household registries, manage family membership updates, and track the distribution of goods or assistance.',
+    liveUrl: '',
     actionLabel: 'Live demo',
     actionDisabled: true
   },
   {
-    title: 'DreamLine',
+    title: 'E-Commerce: My DreamLine',
     type: 'Academic',
     statusClass: 'status-live',
-    statusText: 'Completed',
-    description: 'A student project focused on a clean and engaging web layout for a travel and booking concept.',
-    bullets: [
-      'Responsive landing-page design',
-      'Product browsing and travel concept flow',
-      'Front-end interface and landing page work'
-    ],
-    liveUrl: 'https://mendoza-joana.pages.dev/',
+    statusText: 'Under Improvement',
+    description: 'An e-commerce application designed to provide users with an accessible online shopping experience, includes features such as product browsing, shopping cart management, and a secure checkout process.',
+    liveUrl: '',
     actionLabel: 'View project',
     actionDisabled: false
   },
   {
-    title: 'ShareTots',
+    title: 'ShareTots: CRUD Application',
     type: 'Personal',
     statusClass: 'status-prototype',
     statusText: 'Prototype',
-    description: 'A prototype concept exploring practical sharing and community-oriented service workflows.',
-    bullets: [
-      'Simple service-focused interface',
-      'Clear information hierarchy',
-      'Application concept for local needs'
-    ],
-    liveUrl: '#',
+    description: 'A thread-inspired social application designed to explore content sharing and post management through CRUD functionality.',
+    liveUrl: '',
     actionLabel: 'Prototype',
     actionDisabled: true
   }
 ];
+
+const certificatesDriveUrl = 'https://drive.google.com/drive/folders/12hdQMdLK6TkX1yKj32U3EDfuX-vJYX86?usp=sharing';
 
 const figmaProjects = [
   {
@@ -85,8 +72,8 @@ function renderFeaturedProjects() {
   if (!gallery) return;
 
   gallery.innerHTML = featuredProjects.map((project) => {
-    const actionMarkup = project.actionDisabled
-      ? '<span class="project-action" aria-disabled="true">'+project.actionLabel+'</span>'
+    const actionMarkup = project.actionDisabled || !project.liveUrl
+      ? '<span class="project-action" aria-disabled="true">Project link coming soon</span>'
       : '<a class="project-action" href="'+project.liveUrl+'" target="_blank" rel="noopener noreferrer">'+project.actionLabel+'</a>';
 
     return `
@@ -97,15 +84,47 @@ function renderFeaturedProjects() {
         </div>
         <h3>${project.title}</h3>
         <p>${project.description}</p>
-        <ul>
-          ${project.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}
-        </ul>
         <div class="project-links">
           ${actionMarkup}
         </div>
       </article>
     `;
   }).join('');
+}
+
+function setupCertificatesLink() {
+  const placeholder = document.getElementById('certificate-link');
+  if (!placeholder || certificatesDriveUrl === '[ADD_GOOGLE_DRIVE_CERTIFICATES_LINK]') return;
+
+  const link = document.createElement('a');
+  link.className = placeholder.className;
+  link.href = certificatesDriveUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = 'View Certificates & Badges';
+  placeholder.replaceWith(link);
+}
+
+async function setupCertificatePreviews() {
+  const previews = document.querySelectorAll('.cert-visual[data-image-src]');
+
+  for (const preview of previews) {
+    const status = preview.querySelector('span');
+    const imageUrl = preview.dataset.imageSrc;
+
+    try {
+      const response = await fetch(imageUrl, { method: 'HEAD' });
+      if (!response.ok) continue;
+
+      const image = document.createElement('img');
+      image.src = imageUrl;
+      image.alt = preview.dataset.imageAlt || 'Certificate image';
+      preview.prepend(image);
+      preview.classList.add('has-image');
+    } catch {
+      if (status) status.textContent = 'Preview unavailable — add the image to the images folder.';
+    }
+  }
 }
 
 function renderFigmaProjects() {
@@ -181,6 +200,8 @@ function setupNavigationState() {
 window.addEventListener('DOMContentLoaded', () => {
   renderFeaturedProjects();
   renderFigmaProjects();
+  setupCertificatesLink();
+  setupCertificatePreviews();
   setupMenu();
   setupNavigationState();
   setYear();
