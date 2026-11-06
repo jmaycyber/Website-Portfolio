@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutumnJo | Cozy Meets Couture</title>
+  <link rel="stylesheet" href="shared/styles.css">
+  <link rel="stylesheet" href="shared/utilities.css">
+  <link rel="stylesheet" href="features/navigation.css">
+  <link rel="stylesheet" href="features/cart.css">
+  <link rel="stylesheet" href="features/auth.css">
+  <link rel="stylesheet" href="features/checkout.css">
+  <link rel="stylesheet" href="features/orders.css">
+  <link rel="stylesheet" href="features/payment.css">
+  <link rel="stylesheet" href="features/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Shared site header/navigation -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo" onclick="showView('storeView')">AutumnJo.<span>.</span></div>
+      <nav class="nav-links" id="mainNavLinks">
+        <a href="#" data-filter="all" class="active">All</a>
+        <a href="#" data-filter="tops">Tops</a>
+        <a href="#" data-filter="dresses">Dresses</a>
+        <a href="#" data-filter="pants">Pants</a>
+        <a href="#" data-filter="skirts">Skirts</a>
+        <a href="#" data-filter="outerwear">Outerwear</a>
+        <a href="#" data-filter="favorites">♥ Favorites</a>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" onclick="showBellNotification()" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1"/></svg>
+        </button>
+        <div class="profile-container">
+          <button id="loginBtn" class="icon-btn" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+          </button>
+          <div id="profileDropdown" class="profile-dropdown hidden">
+            <button type="button" onclick="navigateToAccount('settingsView')">My Account</button>
+            <button type="button" onclick="navigateToAccount('myOrdersView')">My Orders</button>
+            <button type="button" id="logoutBtn">Sign out</button>
+          </div>
+        </div>
+        <button id="cartBtn" class="icon-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-2 11H8L6 6z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/></svg>
+          <span id="cartCount" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Store page content: homepage/store listing view -->
+  <div id="storeView">
+    <section class="hero" id="heroSection">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">INTEGRATIVE COLLECTION 2026</p>
+          <h1 id="heroTitle">fits with style<br/><em>YOUR EVERYDAY<br>AUTUMN HAUL</em></h1>
+          <p class="lede" id="heroLede">Fall in love with our new girlish autumn arrivals. Rich plums, warm knits, and elegant silhouettes waiting for you.</p>
+        </div>
+        <div class="hero-collage">
+          <div class="collage-card cc-tops" onclick="filterFromCard('tops')"><img src="assets/images/top6.jpg" alt="Tops"><div class="collage-overlay"><span class="collage-title">Tops</span></div></div>
+          <div class="collage-card cc-dresses" onclick="filterFromCard('dresses')"><img src="assets/images/dress9.jpg" alt="Dresses"><div class="collage-overlay"><span class="collage-title">Dresses</span></div></div>
+          <div class="collage-card cc-pants" onclick="filterFromCard('pants')"><img src="assets/images/pant2.jpg" alt="Pants"><div class="collage-overlay"><span class="collage-title">Pants</span></div></div>
+          <div class="collage-card cc-skirts" onclick="filterFromCard('skirts')"><img src="assets/images/skirt10.jpg" alt="Skirts"><div class="collage-overlay"><span class="collage-title">Skirts</span></div></div>
+          <div class="collage-card cc-outerwear" onclick="filterFromCard('outerwear')"><img src="assets/images/otw2.jpg" alt="Outerwear"><div class="collage-overlay"><span class="collage-title">Outerwear</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar container">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="searchInput" type="search" placeholder="Search lovely tops, dresses, knits..." />
+      </div>
+      <div class="sort">
+        <label>Sort</label>
+        <select id="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </section>
+
+    <main class="container">
+      <div id="productGrid" class="grid"></div>
+      <p id="emptyState" class="hidden empty-state">No items match your search.</p>
+    </main>
+  </div>
+
+  <!-- Checkout page content -->
+  <div id="checkoutView" class="container hidden">
+    <div class="checkout-layout">
+      <div class="checkout-forms">
+        <button type="button" onclick="showView('storeView')" class="back-link"> Back to shopping</button>
+        <h1 class="page-title">Secure Checkout</h1>
+        <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+          <div class="form-section">
+            <h2>Delivery Address</h2>
+            <div id="savedAddressesContainer" class="payment-options"></div>
+            <div class="payment-option-group" style="margin-top: 12px;">
+              <label class="payment-radio" id="newAddressRadioLabel">
+                <input type="radio" name="address" value="new" onchange="toggleAddress()">
+                <span>Add New Address</span>
+              </label>
+              <div id="newAddressDetails" class="payment-details hidden">
+                <div class="form-row">
+                  <div class="form-group"><label>First Name</label><input type="text" id="newFirstName"></div>
+                  <div class="form-group"><label>Last Name</label><input type="text" id="newLastName"></div>
+                </div>
+                <div class="form-group"><label>Street Address</label><input type="text" id="newStreet"></div>
+                <div class="form-row">
+                  <div class="form-group"><label>City</label><input type="text" id="newCity"></div>
+                  <div class="form-group"><label>Postcode / ZIP</label><input type="text" id="newZip"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Payment Method</h2>
+            <h5 class="checkout-note">Please verify payment account information in Account Settings.</h5>
+            <div class="payment-options" id="checkoutPaymentContainer"></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="summary-card">
+        <h3>Order Summary</h3>
+        <div id="checkoutSummaryItems"></div>
+        <div class="voucher-box">
+          <input type="text" id="promoInput" placeholder="Promo code (Try SAVE20)">
+          <button type="button" onclick="applyPromo()">Apply</button>
+        </div>
+        <div class="summary-row"><span>Subtotal</span><span id="summarySubtotal">$0.00</span></div>
+        <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+        <div class="summary-row hidden" id="discountRow">
+          <span>Discount (<span id="discountLabel"></span>)</span>
+          <span id="summaryDiscount">-$0.00</span>
+        </div>
+        <div class="summary-total"><span>Total</span><span id="summaryFinalTotal">$0.00</span></div>
+        <button type="submit" form="checkoutForm" class="btn btn-primary full checkout-complete">Complete Purchase</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Account settings page content -->
+  <div id="settingsView" class="container hidden">
+    <div class="page-header">
+      <h1 class="page-title">Account Settings</h1>
+    </div>
+
+    <div class="settings-columns">
+      <div class="settings-panel">
+        <div class="form-section">
+          <h2>Personal Information</h2>
+          <div class="form-group"><label>Full Name</label><input type="text" id="settingsFullName" value="Joana Mendoza"></div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="settingsEmail" value="joanamay@dwcc"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="settingsPhone" value="0912 345 6789"></div>
+          <div class="button-row">
+            <button class="btn btn-primary" onclick="showToast('Personal settings saved successfully!')">Save Changes</button>
+            <button class="btn" id="changePasswordBtn" onclick="toggleChangePasswordForm()">Change Password</button>
+            <button class="btn btn-danger" onclick="deleteAccount()">Delete Account</button>
+          </div>
+          <div id="settingsChangePasswordForm" class="hidden settings-panel-border">
+            <div class="form-group"><label>Current Password</label><input type="password" id="currentPasswordInput"></div>
+            <div class="form-group"><label>New Password</label><input type="password" id="newPasswordInput"></div>
+            <div class="form-group"><label>Confirm New Password</label><input type="password" id="confirmPasswordInput"></div>
+            <div class="button-row">
+              <button class="btn btn-primary" onclick="changePassword()">Update Password</button>
+              <button class="btn" onclick="toggleChangePasswordForm()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-section">
+          <h2>Linked Payment Methods</h2>
+          <div id="settingsPaymentsList" class="settings-list"></div>
+          <div id="settingsPaymentForm" class="hidden settings-panel-border">
+            <div class="form-group">
+              <label>Payment Mode</label>
+              <select id="paymentTypeSelect" onchange="toggleLinkedPaymentInputs()">
+                <option value="card">Credit/Debit Card</option>
+                <option value="gcash">GCash</option>
+              </select>
+            </div>
+            <div id="settingsCardInputs">
+              <div class="form-group"><label>Card Number</label><input type="text" id="settingsCardNum" placeholder="xxxx xxxx xxxx 4321"></div>
+              <div class="form-group"><label>Cardholder Name</label><input type="text" id="settingsCardHolder" placeholder="Joana Mendoza"></div>
+            </div>
+            <div id="settingsGcashInputs" class="hidden">
+              <div class="form-group"><label>GCash Mobile Number</label><input type="text" id="settingsGcashNum" placeholder="09XXXXXXXXX" maxlength="11"></div>
+            </div>
+            <div class="button-row">
+              <button type="button" class="btn btn-primary" onclick="saveSettingPaymentMethod()">Link Account</button>
+              <button type="button" class="btn" onclick="hideSettingPaymentForm()">Cancel</button>
+            </div>
+          </div>
+          <button id="addPaymentBtn" class="btn accent-outline full" onclick="showSettingPaymentForm()">Link New Payment Account</button>
+        </div>
+
+        <div class="form-section">
+          <h2>Saved Delivery Locations</h2>
+          <div id="settingsAddressList" class="settings-list"></div>
+          <p class="settings-note">Your saved delivery locations appear here after checkout.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- My orders page content -->
+  <div id="myOrdersView" class="container hidden">
+    <div class="page-header my-orders-header">
+      <button type="button" class="back-link" onclick="showView('storeView')">Back to shopping</button>
+      <h1 class="page-title">My Orders</h1>
+      <div></div>
+    </div>
+    <div class="orders-main">
+      <div id="noOrderMessage" class="hidden no-orders-note">You have no active orders at the moment.</div>
+      <div id="ordersList" class="orders-list"></div>
+    </div>
+  </div>
+
+  <!-- Shared site footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-section footer-brand-section">
+      <div class="footer-brand">AutumnJo.</div>
+        <p class="footer-tagline">Cozy Meets Couture</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#" onclick="showView('storeView'); return false;">Shop</a>
+        <a href="#" onclick="showView('myOrdersView'); return false;">Orders</a>
+        <a href="#" onclick="showView('settingsView'); return false;">Account</a>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><strong>Email:</strong> <a href="mailto:hello@autumnjo.com">hello@autumnjo.com</a></p>
+        <p><strong>Support:</strong> <a href="mailto:support@autumnjo.com">support@autumnjo.com</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="footer-socials">
+          <a href="#" class="social-link" title="Instagram">IG</a>
+          <a href="#" class="social-link" title="Twitter">FB</a>
+          <a href="#" class="social-link" title="Pinterest">PT</a>
+          <a href="#" class="social-link" title="TikTok">TT</a>
+        </div>
+      </div>
+
+      <div class="footer-section footer-inquiry">
+        <h4>Product Inquiry</h4>
+        <div class="inquiry-form">
+          <input id="footerInquireText" type="text" maxlength="100" placeholder="Ask about colors, sizes..." aria-label="Footer inquiry" />
+          <button type="button" class="inquiry-btn" onclick="sendInquiry()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 AutumnJo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared cart drawer component -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+  <aside id="cartDrawer" class="drawer">
+    <div class="drawer-head">
+      <h3>Your Cart</h3>
+      <button class="close-btn" onclick="toggleDrawer()">✕</button>
+    </div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div class="drawer-foot">
+      <div class="drawer-total"><span>Selected Total</span><span id="cartTotal">$0.00</span></div>
+      <button class="btn btn-primary full" onclick="initCheckout()">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Shared login/auth modal component -->
+  <div class="modal-overlay" id="loginModalOverlay">
+    <div class="modal-content login-box">
+      <button class="close-btn" onclick="closeLoginModal()">✕</button>
+      <h2 id="loginTitle">Sign in to AutumnJo.</h2>
+      <h5 id="loginSubtitle">Access your favorites and faster checkout.</h5>
+      <form onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="loginEmailField" required value="user@example.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPasswordField" required value="user12345">
+        </div>
+        <div class="auth-mode-row">
+          <a href="#" id="authModeToggleLink" onclick="toggleAuthMode()">Create an account</a>
+        </div>
+        <button type="submit" id="authSubmitBtn" class="btn btn-primary full">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared product preview modal component -->
+  <div class="modal-overlay" id="productModalOverlay">
+    <div class="modal-content preview-box">
+      <button class="close-btn" onclick="closePreviewModal()">✕</button>
+      <img id="pmImage" class="preview-img" src="" alt="Product">
+      <div class="preview-details">
+        <h3 id="pmName">Product Name</h3>
+        <div class="price" id="pmPrice">$0.00</div>
+        <p class="desc" id="pmDescription">Made with premium materials, this piece offers both comfort and effortless style for your autumn wardrobe.</p>
+        <div class="selector-group">
+          <span class="size-label">Select Size</span>
+          <select id="pmSize" class="size-select">
+            <option value="S">Small (S)</option>
+            <option value="M">Medium (M)</option>
+            <option value="L">Large (L)</option>
+            <option value="XL">Extra Large (XL)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary full" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared/state.js"></script>
+  <script src="features/navigation.js"></script>
+  <script src="features/cart.js"></script>
+  <script src="features/auth.js"></script>
+  <script src="features/checkout.js"></script>
+  <script src="features/payment.js"></script>
+  <script src="features/orders.js"></script>
+  <script src="features/footer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

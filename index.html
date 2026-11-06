@@ -25,7 +25,7 @@
                 <ul>
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#work" class="nav-link">Featured Work</a></li>
+                    <li><a href="#work" class="nav-link">Featured Works</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#education" class="nav-link">Education &amp; Credentials</a></li>
                     <li><a href="#roadmap" class="nav-link">Learning Roadmap</a></li>
@@ -52,35 +52,10 @@
                 <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Currently building practical projects and early-career IT experience.</p>
             </div>
 
-            <div class="hero-visual" aria-label="Joana Mendoza portfolio visual">
-                <div class="hero-visual-panel">
-                    <div class="workspace-window">
-                        <div class="window-header">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="window-body">
-                            <div class="window-sidebar">
-                                <span class="sidebar-pill sidebar-pill--maroon">UI/UX</span>
-                                <span class="sidebar-pill sidebar-pill--blue">Data</span>
-                            </div>
-                            <div class="window-content">
-                                <div class="mini-panel">
-                                    <p>Portfolio 01</p>
-                                    <strong>Digital systems</strong>
-                                </div>
-                                <div class="mini-metrics">
-                                    <div><span>Focus</span><strong>Web development</strong></div>
-                                    <div><span>Focus</span><strong>UI/UX &amp; data</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portrait-frame">
-                        <img src="images/portrait-joana-1.jpg" alt="Portrait of Joana Mendoza" loading="lazy">
-                    </div>
-                    <div class="info-tag info-tag--blue">Web dev</div>
-                    <div class="info-tag info-tag--maroon">Design</div>
-                </div>
+            <div class="hero-visual">
+                <figure class="hero-portrait">
+                    <img src="images/portrait-joana-1.jpg" alt="Portrait of Joana Mendoza">
+                </figure>
             </div>
         </section>
 
@@ -178,23 +153,36 @@
             </div>
         </section>
 
-        <section class="section container" id="work">
+        <section class="section container project-section" id="work">
             <div class="section-heading section-heading--split">
                 <div>
-                    <p class="eyebrow">Featured Work</p>
-                    <h2>Featured Work and Project Evidence</h2>
+                    <p class="eyebrow">Selected collection</p>
+                    <h2>Featured Works</h2>
                 </div>
                 <div class="section-index">03 / work</div>
             </div>
 
-            <div class="project-gallery" id="project-gallery" aria-label="Featured projects. Scroll horizontally to see each project." tabindex="0"></div>
+            <div class="project-gallery" id="project-gallery" aria-label="Featured Works. Scroll horizontally to see each project." tabindex="0"></div>
 
             <div class="project-group" aria-labelledby="figma-projects-heading">
                 <div class="group-header">
                     <p class="eyebrow">UI/UX Design</p>
                     <h3 id="figma-projects-heading">UI/UX Design &amp; Interface Prototypes</h3>
                 </div>
-                <div class="figma-gallery" id="figma-gallery" aria-label="UI and UX design projects. Scroll horizontally to see each project." tabindex="0"></div>
+                <div class="figma-gallery" id="figma-gallery" aria-label="UI and UX design projects. Scroll horizontally to see each preview." tabindex="0"></div>
+            </div>
+        </section>
+
+        <section class="section container" id="project-evidence">
+            <div class="section-heading section-heading--split">
+                <div>
+                    <p class="eyebrow">Project resources</p>
+                    <h2>Project Evidence</h2>
+                </div>
+                <div class="section-index">04 / work evidence</div>
+            </div>
+            <div class="evidence-panel">
+                <p>Each Featured Works link opens its project's local entry page. Project-specific HTML, styles, scripts, and available assets stay organized in that project's folder.</p>
             </div>
         </section>
 
@@ -204,7 +192,7 @@
                     <p class="eyebrow">Experience</p>
                     <h2>Relevant Work and Learning Timeline</h2>
                 </div>
-                <div class="section-index">04 / experience</div>
+                <div class="section-index">05 / experience</div>
             </div>
 
             <div class="timeline">
@@ -255,40 +243,29 @@
                     <p class="eyebrow">Education &amp; Credentials</p>
                     <h2>Academic and Professional Learning</h2>
                 </div>
-                <div class="section-index">05 / credentials</div>
+                <div class="section-index">06 / credentials</div>
             </div>
 
             <div class="credentials-layout">
-                <div class="credential-card">
+                <div class="credential-card education-card">
                     <h3>Formal Education</h3>
-                    <ul>
-                        <li><strong>B.S. in Information and Technology</strong><span>Divine Word College of Calapan</span><em>2023 — Present</em></li>
+                    <ul class="education-list">
+                        <li class="education-entry education-entry--current">
+                            <span class="education-level">Current studies</span>
+                            <strong>Bachelor of Science in Information Technology</strong>
+                            <span>Divine Word College of Calapan</span>
+                            <em>Present</em>
+                        </li>
+                        <li class="education-entry education-entry--previous">
+                            <strong>Holy Infant Academy</strong>
+                            <span>Junior High School and Senior High School</span>
+                            <em>2017–2023</em>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="credential-card training-card">
                     <h3>Certifications &amp; Training</h3>
-                    <div class="certificate-entry">
-                        <div class="certificate-details">
-                            <h4>Java Programming NC III</h4>
-                            <p class="credential-issuer">TESDA / Divine Word College of Calapan</p>
-                            <p class="credential-date">July — August 2025</p>
-                        </div>
-                        <div class="cert-visual cert-visual--java" data-image-src="images/java-cert.png" data-image-alt="Java Programming NC III certificate">
-                            <span>java-cert · image to be added</span>
-                        </div>
-                        <span class="certificate-action" data-certificate-action>Certificate image not added</span>
-                    </div>
-                    <div class="certificate-entry">
-                        <div class="certificate-details">
-                            <h4>CDSA</h4>
-                            <p class="credential-issuer">Credential placeholder</p>
-                        </div>
-                        <div class="cert-visual cert-visual--cdsa" data-image-src="images/cdsa-cert.png" data-image-alt="CDSA certificate">
-                            <span>cdsa-cert · image to be added</span>
-                        </div>
-                        <span class="certificate-action" data-certificate-action>Certificate image not added</span>
-                    </div>
                     <div class="training-links">
                         <a class="button button-primary button-block" href="https://drive.google.com/drive/folders/12hdQMdLK6TkX1yKj32U3EDfuX-vJYX86?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificates &amp; Badges</a>
                         <a class="button button-secondary button-block" href="https://www.credly.com/users/joanamay-mendoza-it.f2052220" target="_blank" rel="noopener noreferrer">View Verified Credly Credentials</a>
@@ -303,7 +280,7 @@
                     <p class="eyebrow">Learning Roadmap</p>
                     <h2>Planned and in-progress learning</h2>
                 </div>
-                <div class="section-index">06 / roadmap</div>
+                <div class="section-index">07 / roadmap</div>
             </div>
 
             <div class="roadmap-grid">

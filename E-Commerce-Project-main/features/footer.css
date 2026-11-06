@@ -1,0 +1,151 @@
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  margin-top: 60px;
+  padding-top: 48px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-section h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.footer-section a {
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.footer-brand-section .footer-brand {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(217, 119, 6, 0.08);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.inquiry-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inquiry-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 13px;
+}
+
+.inquiry-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.inquiry-btn {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.inquiry-btn:hover {
+  background: #b85e04;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.footer-bottom-content {
+  text-align: center;
+}
+
+.footer-bottom-content p {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .inquiry-form {
+    flex-direction: column;
+  }
+
+  .inquiry-form input,
+  .inquiry-btn {
+    width: 100%;
+  }
+}

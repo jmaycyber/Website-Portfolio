@@ -1,0 +1,68 @@
+:root {
+  --accent: #d97706;
+  --ink: #111827;
+  --ink-soft: #6b7280;
+  --surface: #ffffff;
+  --bg: #ffffff;
+  --line: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --font: 'Poppins', system-ui, sans-serif;
+}
+
+/* Basic page layout + typography */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background-color: var(--bg);
+  line-height: 1.5;
+  padding-bottom: 288px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Keep buttons visually consistent */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #374151;
+}
+
+.accent-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: none;
+}
+
+.accent-outline:hover {
+  background: rgba(249, 115, 22, 0.08);
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+  }
+  #heroTitle {
+    font-size: 36px;
+  }
+}

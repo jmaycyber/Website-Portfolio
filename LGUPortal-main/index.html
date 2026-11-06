@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Distribution System - Governance Platform</title>
+    <!-- Tailwind CSS Play CDN for instant modern styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons for high-fidelity enterprise UI icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen pb-12">
+
+    <!-- GLOBAL NAVBAR -->
+    <nav class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-indigo-600 p-2 rounded-lg text-white">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="font-black tracking-tight text-lg block">NAT-DISTRIB</span>
+                    <span class="text-[10px] text-slate-400 block -mt-1 tracking-widest font-mono">GOVERNMENT PORTAL</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+                <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">System Live</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-12">
+
+        <!-- MODULE 1: THE AUTHENTICATION & VALIDATION GATEWAY -->
+        <section class="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 px-6 py-4 text-white flex justify-between items-center">
+                <div>
+                    <h2 class="text-base font-bold tracking-tight">1. Citizen Registry Gateway</h2>
+                    <p class="text-xs text-slate-400">Single Account Family Registration Wizard</p>
+                </div>
+                <span class="text-[10px] font-mono bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700">SECURE GATEWAY</span>
+            </div>
+            <div class="p-6 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Household Registration Number</label>
+                        <input type="text" placeholder="HH-2026-NAGA-01" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 outline-none font-mono text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Government ID Type</label>
+                        <select class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-slate-900 outline-none text-sm">
+                            <option>National ID (PhilSys)</option>
+                            <option>Passport</option>
+                            <option>UMID</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- OCR Mock Container -->
+                <div class="border-2 border-dashed border-slate-200 rounded-xl p-6 bg-slate-50 flex flex-col items-center justify-center text-center">
+                    <i data-lucide="upload-cloud" class="w-10 h-10 text-slate-400 mb-2"></i>
+                    <p class="text-sm font-semibold text-slate-700">Upload or Drag Valid Identification Card</p>
+                    <p class="text-xs text-slate-400 mt-0.5 mb-4">PNG, JPG formats up to 10MB verified securely</p>
+                    <button onclick="triggerOCR()" class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-700 shadow-sm hover:bg-slate-50 transition cursor-pointer">
+                        Simulate File Upload
+                    </button>
+
+                    <!-- Dynamic OCR Status -->
+                    <div id="ocr-status-box" class="hidden mt-4 w-full max-w-md flex items-center justify-between p-3 rounded-lg border transition-all">
+                        <div class="flex items-center space-x-3">
+                            <div id="ocr-icon-container"></div>
+                            <span id="ocr-text" class="text-xs font-bold tracking-wide"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ocr-extracted-field" class="hidden animate-fadeIn">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Head of Family Full Name (Auto-Extracted)</label>
+                    <input type="text" disabled value="JUAN DELA CRUZ" class="w-full px-4 py-2.5 rounded-lg bg-slate-100 border border-slate-200 font-bold text-slate-800 text-sm">
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 2: DYNAMIC DEPENDENT & INFANT DISQUALIFICATION MATRIX -->
+        <section class="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 px-6 py-4 text-white">
+                <h2 class="text-base font-bold tracking-tight">2. Dependent Eligibility Matrix</h2>
+                <p class="text-xs text-slate-400">Dynamic allocation tracking rules for minors and school dependents</p>
+            </div>
+            <div class="p-6 space-y-6">
+                <div class="max-w-xl">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Precise Dependent Date of Birth</label>
+                    <div class="relative">
+                        <input type="date" id="dependent-dob" onchange="evaluateAgeThreshold()" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 outline-none text-sm font-mono">
+                    </div>
+                </div>
+
+                <!-- Active Calculation Result Notification -->
+                <div id="matrix-result-box" class="hidden p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-600">Dynamic System Separation Tracking:</span>
+                        <span id="matrix-badge" class="px-2 py-0.5 rounded text-[10px] font-black font-mono uppercase tracking-wider"></span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-100 flex items-center space-x-3">
+                        <i data-lucide="alert-circle" class="w-5 h-5 text-indigo-500"></i>
+                        <div>
+                            <p id="matrix-main-text" class="text-xs font-bold text-slate-800"></p>
+                            <p id="matrix-sub-text" class="text-[11px] text-slate-400 mt-0.5"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scholar Guaranteed Tracking Module Toggle -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 flex flex-col space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-slate-700"></i>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Scholar Guaranteed Tracking</p>
+                                <p class="text-xs text-slate-400">Link verified educational allowances to school-aged dependents</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="scholar-toggle" onchange="toggleScholarModule()" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-900"></div>
+                        </label>
+                    </div>
+                    <div id="scholar-info-box" class="hidden bg-emerald-50 border border-emerald-100 p-3 rounded-lg flex items-start space-x-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                        <p class="text-xs text-emerald-800 leading-relaxed">
+                            <strong>Active Monitoring Enabled:</strong> Form workflows will automatically mandate verified School Enrollment Letters during distribution updates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 3: GOVERNMENT OFFICIALS DASHBOARD & EVIDENCE HUB -->
+        <section class="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 px-6 py-4 text-white">
+                <h2 class="text-base font-bold tracking-tight">3. Command Hub & Parcel-Style Evidence Portal</h2>
+                <p class="text-xs text-slate-400">Authorized administrative dashboard operations</p>
+            </div>
+            <div class="p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Parcel Verification Pipeline -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/50">
+                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-1">Active Parcel Delivery Drop-off</h3>
+                        <p class="text-xs text-slate-500 mb-4">Upload photographic proof of physical handover to minimize manual distribution leakage</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[9px] font-mono font-bold px-2 py-0.5 bg-slate-100 rounded text-slate-600">STATION 4-A</span>
+                                    <p class="text-sm font-bold text-slate-800 mt-2">Active Drop: HH-9021-88</p>
+                                    <p class="text-xs text-slate-400">Recipient: Amara Sterling</p>
+                                </div>
+                                <button onclick="simulateCamera()" class="mt-4 flex items-center justify-center space-x-2 w-full py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg transition cursor-pointer">
+                                    <i data-lucide="camera" class="w-4 h-4"></i>
+                                    <span>Trigger System Camera</span>
+                                </button>
+                            </div>
+                            <div id="camera-preview" class="border-2 border-dashed border-slate-200 rounded-lg bg-slate-50 flex items-center justify-center p-4 text-center">
+                                <p class="text-xs text-slate-400 font-mono">Camera payload standby...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
+                            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Accountability Watchlist</h4>
+                        </div>
+                        <div class="divide-y divide-slate-100">
+                            <div class="p-4 flex items-center justify-between bg-rose-50/40">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">HH-9021-88 — Amara Sterling</p>
+                                    <p class="text-xs text-slate-500">Zone 4-A • High Priority</p>
+                                </div>
+                                <span class="flex items-center space-x-1 text-[10px] font-bold bg-rose-100 text-rose-800 px-2 py-0.5 rounded-full">
+                                    <i data-lucide="clock" class="w-3 h-3"></i>
+                                    <span>Overdue for Delivery</span>
+                                </span>
+                            </div>
+                            <div class="p-4 flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">HH-1102-45 — Carlos Mendoza</p>
+                                    <p class="text-xs text-slate-500">Zone 2-B • Verification Hold</p>
+                                </div>
+                                <span class="flex items-center space-x-1 text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">
+                                    <i data-lucide="alert-triangle" class="w-3 h-3"></i>
+                                    <span>Unable to Sign/Receive</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2 pb-2 border-b border-slate-100">
+                            <i data-lucide="megaphone" class="w-5 h-5 text-indigo-600"></i>
+                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Broadcast Engine</h4>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Mass dispatch system adjustments or supply delivery window announcements immediately to all public endpoint dashboards.
+                        </p>
+                        <textarea id="broadcast-input" rows="4" class="w-full p-2.5 text-xs rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-600 resize-none font-sans" placeholder="Type administrative broadcast alert message..."></textarea>
+                    </div>
+                    <button onclick="dispatchBroadcast()" class="w-full mt-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition cursor-pointer">
+                        Dispatch Broadcast
+                      </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 px-6 py-4 text-white">
+                <h2 class="text-base font-bold tracking-tight">4. Public Citizen Transparency Dashboard</h2>
+                <p class="text-xs text-slate-400">Open ledger monitoring localized macro budget utilization performance</p>
+            </div>
+            <div class="p-6 space-y-6">
+                <div>
+                    <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+                        <span>Allocated National Capital Disbursed Overall</span>
+                        <span class="font-mono text-indigo-600">74.2% Confirmed</span>
+                    </div>
+                    <div class="w-full h-3.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200/50">
+                        <div class="h-full bg-slate-900 rounded-full transition-all duration-500" style="width: 74.2%"></div>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 text-center">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Total National Pool</span>
+                            <span class="text-lg font-black text-slate-900 block mt-0.5">$450,000,000</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Disbursed Resources</span>
+                            <span class="text-lg font-black text-emerald-600 block mt-0.5">$334,000,000</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Capital In-Transit</span>
+                            <span class="text-lg font-black text-amber-600 block mt-0.5">$86,000,000</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Audit Contingency Reserve</span>
+                            <span class="text-lg font-black text-slate-600 block mt-0.5">$30,000,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white rounded-xl p-6 grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+                    <div class="md:col-span-2 space-y-1">
+                        <span class="inline-flex items-center space-x-1 px-2 py-0.5 bg-slate-800 text-indigo-400 text-[10px] font-bold rounded-md border border-slate-700">
+                            <i data-lucide="help-circle" class="w-3 h-3"></i>
+                            <span>CROWDSOURCED LOGISTICS</span>
+                        </span>
+                        <h4 class="text-base font-bold">Alternative Resource Suggestions</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Registered citizens can directly input alternative supply requirements to optimize deployment allocations.</p>
+                    </div>
+                    <div class="md:col-span-3 bg-slate-800 p-3.5 rounded-lg border border-slate-700">
+                        <div class="flex space-x-2">
+                            <input type="text" id="forum-input" placeholder="Suggest specific allocation adjustments for your local zone..." class="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:ring-1 focus:ring-indigo-500 font-medium">
+                            <button onclick="submitSuggestion()" class="p-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition cursor-pointer">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <span class="text-[9px] text-slate-500 block text-right mt-1.5 font-mono">Requires verified digital certificate token sign-off</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

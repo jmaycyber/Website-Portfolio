@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareTots — Matcha Social</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="brand-wrap">
+                <span class="brand-mark">S</span>
+                <a href="#" class="logo" onclick="showFeed(); return false;">ShareTots</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-icon" id="home-btn" aria-label="Go to feed">⌂</button>
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+                <button class="btn-secondary" id="settings-btn">Settings</button>
+                <button class="btn-primary hidden" id="logout-btn">Log Out</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="auth-section" class="auth-card">
+            <div class="auth-hero">
+                <div class="auth-badge">matcha social</div>
+                <h2 id="auth-title">Welcome to ShareTots</h2>
+                <p>Meaningful moments, calm spaces, and a little creative energy.</p>
+            </div>
+
+            <form id="auth-form" class="auth-form">
+                <div class="form-group">
+                    <label id="username-label" for="auth-username">Username</label>
+                    <input type="text" id="auth-username" required placeholder="Choose a nice handle">
+                </div>
+                <div class="form-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" required placeholder="Keep it secret">
+                </div>
+                <button type="submit" class="btn-primary btn-wide" id="auth-submit-btn">Sign Up</button>
+            </form>
+
+            <p class="auth-toggle-text" id="auth-toggle-wrapper">
+                Already have an account? <span id="auth-toggle">Log In</span>
+            </p>
+        </section>
+
+        <section id="app-section" class="app-shell hidden">
+            <aside class="side-panel left-panel">
+                <div class="panel-card profile-card">
+                    <div class="profile-row">
+                        <div class="avatar avatar-large" id="current-user-avatar">U</div>
+                        <div>
+                            <div class="profile-name" id="current-username">@username</div>
+                            <div class="profile-status"><span class="status-dot"></span> Active now</div>
+                        </div>
+                    </div>
+                    <div class="mini-metrics">
+                        <div>
+                            <strong>1.2k</strong>
+                            <span>Followers</span>
+                        </div>
+                        <div>
+                            <strong>312</strong>
+                            <span>Following</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <div class="panel-header-compact">
+                        <h3>Online now</h3>
+                        <span class="pill soft-green">12</span>
+                    </div>
+                    <div id="online-people" class="people-list"></div>
+                </div>
+
+                <div class="panel-card">
+                    <div class="panel-header-compact">
+                        <h3>Recommended</h3>
+                    </div>
+                    <div id="recommended-people" class="people-list"></div>
+                </div>
+            </aside>
+
+            <section class="feed-column">
+                <div class="composer card">
+                    <div class="composer-header">
+                        <div class="avatar" id="composer-avatar">U</div>
+                        <span class="composer-label">Create a new post</span>
+                    </div>
+
+                    <form id="create-post-form">
+                        <textarea id="post-text" class="post-textarea" placeholder="What are you thinking about today?" required></textarea>
+                        <div class="file-preview" id="file-preview-txt"></div>
+                        <div class="composer-actions">
+                            <label for="file-input" class="file-upload-btn">📎 Add media</label>
+                            <input type="file" id="file-input" accept="image/*,video/*,audio/*,application/pdf">
+                            <button type="submit" class="btn-primary">Post</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="posts-stream" class="feed-list"></div>
+            </section>
+
+            <aside class="side-panel right-panel">
+                <div id="comments-panel" class="panel-card comments-card"></div>
+            </aside>
+        </section>
+    </main>
+
+    <div id="settings-modal" class="modal hidden" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Preferences</p>
+                    <h3 id="settings-title">App settings</h3>
+                </div>
+                <button type="button" class="close-modal" id="close-settings" aria-label="Close settings">✕</button>
+            </div>
+
+            <div class="settings-list">
+                <label class="setting-row">
+                    <span>
+                        <strong>Notifications</strong>
+                        <small>Get alerts for likes and replies</small>
+                    </span>
+                    <input type="checkbox" checked>
+                </label>
+                <label class="setting-row">
+                    <span>
+                        <strong>Private profile</strong>
+                        <small>Only approved people can follow you</small>
+                    </span>
+                    <input type="checkbox">
+                </label>
+                <label class="setting-row">
+                    <span>
+                        <strong>Dark mode</strong>
+                        <small>Switch the app to a darker mood</small>
+                    </span>
+                    <input type="checkbox" id="dark-mode-setting">
+                </label>
+            </div>
+
+            <button type="button" class="btn-primary btn-wide" id="save-settings-btn">Save changes</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Saved</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

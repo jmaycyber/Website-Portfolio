@@ -1,0 +1,11 @@
+:root {
+  --accent: #d97706;
+  --ink: #111827;
+  --ink-soft: #6b7280;
+  --surface: #ffffff;
+  --bg: #ffffff;
+  --line: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --font: 'Poppins', system-ui, sans-serif;
+}
